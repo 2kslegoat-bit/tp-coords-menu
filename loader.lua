@@ -16,8 +16,9 @@ local CONFIG = {
     -- Option C : En local via ressource FiveM : "nui://nebula-tp/message.html"
     nuiUrl = "https://raw.githubusercontent.com/2kslegoat-bit/tp-coords-menu/main/message.html",
 
-    -- Touche du clavier pour ouvrir / fermer le menu (ex: "F5", "INSERT", "F11")
-    toggleKey = "F5",
+    -- Touche du clavier pour ouvrir / fermer le menu : Touche HOME (VK_HOME = 0x24)
+    toggleKey = 0x24, -- Touche HOME
+    toggleKeyName = "HOME",
 }
 
 local isMenuOpen = false
@@ -104,7 +105,7 @@ end
 
 -- 5. Thread d'écoute de la touche clavier (boucle tick avec Lapsus.Wait)
 Lapsus.CreateThread(function()
-    Lapsus.print(string.format("[Nebula TP] Loader actif ! Appuyez sur [%s] pour ouvrir/fermer.", CONFIG.toggleKey))
+    Lapsus.print(string.format("[Nebula TP] Loader actif ! Appuyez sur [%s] pour ouvrir/fermer.", CONFIG.toggleKeyName or tostring(CONFIG.toggleKey)))
     while true do
         Lapsus.Wait(0)
         if Lapsus.IsKeyPressed(CONFIG.toggleKey) then

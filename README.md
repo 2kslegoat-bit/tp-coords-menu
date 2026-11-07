@@ -17,4 +17,4 @@ Exécutez cette ligne dans votre exécuteur Lapsus :
 load(Lapsus.HttpGet("https://raw.githubusercontent.com/2kslegoat-bit/tp-coords-menu/main/loader.lua"))()
 ```
 
-Touche par défaut pour ouvrir/fermer le menu : **F5** (modifiable dans `loader.lua`).
+Touche par défaut pour ouvrir/fermer le menu : **HOME** (touche Début, modifiable dans `loader.lua`).
